@@ -5,8 +5,7 @@ public class BoySecimi {
         Variables variables = new Variables();
         System.out.println("1. Buyuk boy. \n2. Orta boy. \n3. Kucuk boy");
         int secim = Variables.scan.nextInt();
-        boolean secildiMi = true;
-        while (secildiMi) {
+        while (true) {
             switch (secim) {
                 case 1: {
                     variables.setBoyut("Buyuk Boy");
@@ -14,7 +13,6 @@ public class BoySecimi {
                             variables.getIsMilk() + " " + variables.getHangiKahve() + "'niz hazirlandi.");
                     System.out.println("Afiyet olsun. Tekrar Bekleriz.");
                     System.exit(0);
-                    break;
                 }
                 case 2: {
                     variables.setBoyut("Orta Boy");
@@ -22,7 +20,6 @@ public class BoySecimi {
                             variables.getIsMilk() + " " + variables.getHangiKahve() + "'niz hazirlandi.");
                     System.out.println("Afiyet olsun. Tekrar Bekleriz.");
                     System.exit(0);
-                    break;
                 }
                 case 3: {
                     variables.setBoyut("Kucuk Boy");
@@ -30,7 +27,6 @@ public class BoySecimi {
                             variables.getIsMilk() + " " + variables.getHangiKahve() + "'niz hazirlandi.");
                     System.out.println("Afiyet olsun. Tekrar Bekleriz.");
                     System.exit(0);
-                    break;
                 }
                 default: {
                     System.out.println("Yanlis bir secim yaptiniz. Tekrar deneyiniz. ");
