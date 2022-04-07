@@ -2,27 +2,19 @@ package kahveMakinesi;
 
 public class SekerEkleme {
     public SekerEkleme() throws InterruptedException {
-        Variables variables = new Variables();
         System.out.println("Seker eklemek ister misiniz ? (1) EVET / (2) HAYIR");
-        Variables.scan.nextLine();
         int secim = Variables.scan.nextInt();
-        while (true) {
-            if (secim == 1) {
-                variables.setIsSugar("Sekerli");
-                System.out.println(variables.getIsSugar() + " " + variables.getIsMilk() + " " +
-                        variables.getHangiKahve() + "'niz hazirlaniyor.");
-                Thread.sleep(1000);
-                BoySecimi boySecimi = new BoySecimi();
-            } else if (secim == 2) {
-                variables.setIsSugar("Sekersiz");
-                System.out.println(variables.getIsSugar() + " " + variables.getIsMilk() + " " +
-                        variables.getHangiKahve() + "'niz hazirlaniyor.");
-                Thread.sleep(1000);
-                BoySecimi boySecimi = new BoySecimi();
-            } else {
-                System.out.println("Hatali bir secim yaptiniz. Tekrar deneyin. ");
-                SekerEkleme sekerEkleme = new SekerEkleme();
-            }
+        if (secim == 1) {
+            Variables.isSugar = "Sekerli";
+        } else if (secim == 2) {
+            Variables.isSugar = "Sekersiz";
+        } else {
+            System.out.println("Hatali bir secim yaptiniz. Tekrar deneyin. ");
+            SekerEkleme sekerEkleme = new SekerEkleme();
         }
+        System.out.println(Variables.isSugar + " " + Variables.isMilk + " " +
+                Variables.hangiKahve + "'niz hazirlaniyor. Lutfen bekleyin.");
+        Thread.sleep(1000);
+        BoySecimi boySecimi = new BoySecimi();
     }
 }
